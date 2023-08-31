@@ -434,7 +434,7 @@ export class JellyfishClient<PeerMetadata, TrackMetadata> extends (EventEmitter 
     track: MediaStreamTrack,
     stream: MediaStream,
     trackMetadata?: TrackMetadata,
-    simulcastConfig: SimulcastConfig = { enabled: false, active_encodings: [] },
+    simulcastConfig: SimulcastConfig = { enabled: false, activeEncodings: [] },
     maxBandwidth: TrackBandwidthLimit = 0 // unlimited bandwidth
   ): string {
     if (!this.webrtc) throw this.handleWebRTCNotInitialized();
@@ -635,7 +635,7 @@ export class JellyfishClient<PeerMetadata, TrackMetadata> extends (EventEmitter 
    *
    * @example
    * ```ts
-   * const trackId = webrtc.addTrack(track, stream, {}, {enabled: true, active_encodings: ["l", "m", "h"]});
+   * const trackId = webrtc.addTrack(track, stream, {}, {enabled: true, activeEncodings: ["l", "m", "h"]});
    * webrtc.disableTrackEncoding(trackId, "l");
    * // wait some time
    * webrtc.enableTrackEncoding(trackId, "l");
@@ -655,7 +655,7 @@ export class JellyfishClient<PeerMetadata, TrackMetadata> extends (EventEmitter 
    *
    * @example
    * ```ts
-   * const trackId = webrtc.addTrack(track, stream, {}, {enabled: true, active_encodings: ["l", "m", "h"]});
+   * const trackId = webrtc.addTrack(track, stream, {}, {enabled: true, activeEncodings: ["l", "m", "h"]});
    * webrtc.disableTrackEncoding(trackId, "l");
    * ```
    *

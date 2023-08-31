@@ -55,7 +55,7 @@
 
 "@jellyfish-dev/membrane-webrtc-js@github:jellyfish-dev/membrane-webrtc-js#RTC-341":
   version "0.5.1"
-  resolved "git+ssh://git@github.com/jellyfish-dev/membrane-webrtc-js.git#63bb5aaf2b5d4590303524bb99f18f15f57dea26"
+  resolved "git+ssh://git@github.com/jellyfish-dev/membrane-webrtc-js.git#b4928bd93a5c5ebd154f19869488befa334fd136"
   dependencies:
     events "^3.3.0"
     typed-emitter "^2.1.0"
