@@ -9,6 +9,7 @@ import { enumerateDevices, getUserMedia, SCREEN_SHARING_MEDIA_CONSTRAINTS } from
 const peerTokenInput = document.querySelector<HTMLInputElement>("#peer-token-input")!;
 const peerNameInput = document.querySelector<HTMLInputElement>("#peer-name-input")!;
 const connectButton = document.querySelector<HTMLButtonElement>("#connect-btn")!;
+const reconnectButton = document.querySelector<HTMLButtonElement>("#reconnect-btn")!;
 const disconnectButton = document.querySelector<HTMLButtonElement>("#disconnect-btn")!;
 const addTrackButton = document.querySelector<HTMLButtonElement>("#add-track-btn")!;
 const removeTrackButton = document.querySelector<HTMLButtonElement>("#remove-track-btn")!;
@@ -235,6 +236,16 @@ connectButton.addEventListener("click", () => {
   });
   elementsToShowIfConnected.forEach((e) => e.classList.remove("hidden"));
 });
+
+reconnectButton.addEventListener("click", () => {
+  console.log("Reconnect");
+  client.disconnect()
+  client.connect({
+    peerMetadata: { name: peerNameInput.value || "" },
+    token: peerTokenInput.value,
+  });
+});
+
 
 disconnectButton.addEventListener("click", () => {
   console.log("Disconnect");
